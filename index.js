@@ -10,6 +10,8 @@ module.exports = async () => {
       home: require('./views/home'),
       menu: require('./views/menu'),
       todoList: require('./views/todoList'),
+      listCard: require('./views/listCard'),
+      taskForm: require('./views/taskForm'),
       task: require('./views/task'),
       footer: require('./views/footer')
     },
@@ -19,6 +21,7 @@ module.exports = async () => {
       onSessionStart: require('./listeners/onSessionStart'),
       onUserFirstJoin: require('./listeners/onUserFirstJoin'),
       addTodo: require('./listeners/addTodo'),
+      addList: require('./listeners/addList'),
       checkTodo: require('./listeners/checkTodo')
     },
     rootView: 'main'

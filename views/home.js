@@ -17,9 +17,8 @@ module.exports = (data, counter) => {
                 {
                     type: "view",
                     name: "todoList",
-                    coll: "todo",
+                    coll: "list",
                     query: {
-                        inProgress: true,
                         user: "@me"
                     }
                 }
@@ -27,4 +26,3 @@ module.exports = (data, counter) => {
         }
     }
 }
-

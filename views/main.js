@@ -18,7 +18,6 @@ module.exports = (data, props) => {
           "name": "home"
         },
       },
-
       {
         type: "view",
         name: "footer"
@@ -26,4 +25,3 @@ module.exports = (data, props) => {
     ]
   }
 }
-
