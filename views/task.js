@@ -1,5 +1,7 @@
 'use strict'
 
+const profile = require("../services/profile")
+
 module.exports = (data, props) => {
     return {
         type: "actionable",
@@ -41,6 +43,7 @@ module.exports = (data, props) => {
             child: {
                 type: "flex",
                 fillParent: true,
+                crossAxisAlignment: "center",
                 padding: {
                     top: 8,
                     left: 16,
@@ -49,8 +52,36 @@ module.exports = (data, props) => {
                 },
                 children: [
                     {
-                        type: "text",
-                        value: props.body
+                        type: "flexible",
+                        child: {
+                            type: "text",
+                            value: props.body
+                        }
+                    },
+                    {
+                        type: "button",
+                        text: "Share",
+                        "leftIcon": {
+                            "type": "icon",
+                            "value": "share",
+                        },
+                        onPressed: {
+                            action: "openModal",
+                            props: {
+                                modal: "profiles",
+                                data: {
+                                    coll: profile.collection,
+                                    // query: {
+                                    //     "user": {
+                                    //         "$not": "@me",
+                                    //     }
+                                    // }
+                                },
+                                props: {
+                                    todo: props._id
+                                }
+                            }
+                        }
                     }
                 ]
             }
