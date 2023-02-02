@@ -4,7 +4,6 @@ const todoService = require("../services/todo");
 
 
 module.exports = async (props, event, api) => {
-    console.log(props, event)
     return todoService.create(api, {
         body: event.value.todoBody,
         inProgress: true,

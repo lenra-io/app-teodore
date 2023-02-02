@@ -1,7 +1,6 @@
 'use strict'
 
 module.exports = (data, props) => {
-    console.log("props", props)
     return {
         type: "flex",
         mainAxisAlignment: "center",
