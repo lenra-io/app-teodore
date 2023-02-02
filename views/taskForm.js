@@ -1,6 +1,7 @@
 'use strict'
 
-module.exports = (data, counter) => {
+module.exports = (data, props) => {
+    console.log("props", props)
     return {
         type: "flex",
         mainAxisAlignment: "center",
@@ -8,7 +9,10 @@ module.exports = (data, counter) => {
             {
                 type: "form",
                 onSubmit: {
-                    action: "addList",
+                    action: "addTodo",
+                    props: {
+                        listId: props._id
+                    }
                 },
                 child: {
                     type: "container",
@@ -36,7 +40,7 @@ module.exports = (data, counter) => {
                             {
                                 type: "button",
                                 size: "large",
-                                text: "Create list",
+                                text: "Add task",
                                 submit: true
                             }
                         ]

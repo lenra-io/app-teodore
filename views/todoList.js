@@ -7,13 +7,18 @@ module.exports = (data, counter) => {
         "spacing": 16,
         "mainAxisAlignment": "spaceEvenly",
         "crossAxisAlignment": "center",
-        "children": data.map(todo => {
+        "children": data.map(list => {
             return {
                 "type": "view",
-                name: "task",
-                props: todo
+                name: "listCard",
+                coll: "todo",
+                query: {
+                    inProgress: true,
+                    user: "@me",
+                    list: list._id
+                },
+                props: list
             }
         })
     }
 }
-
